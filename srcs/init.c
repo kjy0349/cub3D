@@ -6,7 +6,7 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:52:56 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:12:46 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:45:08 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void	init_texture(t_mlx *mlx, t_cub *cub)
 			error(0);
 		ft_bzero(mlx->texture[i], sizeof(int) * PIXEL * PIXEL);
 	}
-	my_xpm_to_img(mlx, 0, cub->we);
-	my_xpm_to_img(mlx, 1, cub->ea);
-	my_xpm_to_img(mlx, 2, cub->no);
-	my_xpm_to_img(mlx, 3, cub->so);
+	xpm_to_img(mlx, 0, cub->we);
+	xpm_to_img(mlx, 1, cub->ea);
+	xpm_to_img(mlx, 2, cub->no);
+	xpm_to_img(mlx, 3, cub->so);
 	mlx->img.img = mlx_new_image(mlx->ptr, WIDTH, HEIGHT);
 	mlx->img.data = (int *)mlx_get_data_addr(mlx->img.img, &mlx->img.bpp, \
 		&mlx->img.size_l, &mlx->img.endian);

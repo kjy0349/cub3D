@@ -6,7 +6,7 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:16:00 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:14:49 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:44:41 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,6 @@ void	skip_line(int fd, char **line);
 int		is_empty_line(char *line);
 
 /*draw utils*/
-void	my_xpm_to_img(t_mlx *m, int dir, char *wall);
+void	xpm_to_img(t_mlx *m, int dir, char *wall);
 
 #endif

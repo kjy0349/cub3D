@@ -6,13 +6,13 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:11:09 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:24:15 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:44:27 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	my_xpm_to_img(t_mlx *m, int dir, char *wall)
+void	xpm_to_img(t_mlx *m, int dir, char *wall)
 {
 	t_img	img;
 	int		x;

@@ -6,7 +6,7 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:42:31 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:45:49 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	start(t_info *info)
 	mlx_loop(info->mlx->ptr);
 }
 
-#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	t_info	info;
@@ -51,11 +50,6 @@ int	main(int argc, char **argv)
 	info.mlx = &mlx;
 	info.vec = &vec;
 	parsing(argv[1], &info);
-	int i = 0;
-	while (i < cub.h)
-	{
-		printf("%s\n", cub.map[i++]);
-	}
 	// start(&info);
 	return (0);
 }
