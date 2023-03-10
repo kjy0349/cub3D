@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 11:31:47 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/10 18:57:50 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	start(t_info *info)
 		error("fail to assign mlx");
 	init_mlx(info);
 	mlx_loop_hook(info->mlx->ptr, &draw_screen, info);
-	// mlx_hook(info->mlx->win, KEY_PRESS, 0, &key_press, &info);
+	mlx_hook(info->mlx->win, KEY_PRESS, 0, &key_press, info);
 	// mlx_hook(info->mlx->win, DESTROY, 0, &close, info->mlx);
 	mlx_loop(info->mlx->ptr);
 }

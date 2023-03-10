@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:52:56 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 11:31:45 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/10 18:56:14 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	init_vec(t_vec *vec, char c, int x, int y)
 	vec->dir_y = 1.0;
 	vec->plane_x = 0.66;
 	vec->plane_y = 0.66;
+	vec->move_speed = 1;
+	vec->rot_speed = 1;
 	if (c == 'N' || c == 'S')
 	{
 		vec->dir_x = 0;

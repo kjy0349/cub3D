@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:16:00 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:44:41 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:44:25 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,10 @@ int		is_empty_line(char *line);
 /*draw utils*/
 void	xpm_to_img(t_mlx *m, int dir, char *wall);
 
-/*draw */
+/*draw*/
 int	draw_screen(t_info *info);
+
+/*move*/
+int	key_press(int keycode, t_info *info);
 
 #endif
