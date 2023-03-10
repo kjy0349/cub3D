@@ -21,6 +21,8 @@ void	init_cub(t_cub *cub)
 	cub->map = NULL;
 	cub->fl = -1;
 	cub->ce = -1;
+	cub->h = 0;
+	cub->w = 0;
 }
 
 void	init_vec(t_vec *vec, char c, int x, int y)
