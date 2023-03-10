@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:52:56 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 18:56:14 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/10 22:03:01 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,8 @@ void	init_cub(t_cub *cub)
 	cub->w = 0;
 }
 
-void	init_vec(t_vec *vec, char c, int x, int y)
+void	init_direction(t_vec *vec, char c)
 {
-	vec->pos_x = (double)x + 0.5;
-	vec->pos_y = (double)y + 0.5;
-	vec->dir_x = 1.0;
-	vec->dir_y = 1.0;
-	vec->plane_x = 0.66;
-	vec->plane_y = 0.66;
-	vec->move_speed = 1;
-	vec->rot_speed = 1;
 	if (c == 'N' || c == 'S')
 	{
 		vec->dir_x = 0;
@@ -54,6 +46,19 @@ void	init_vec(t_vec *vec, char c, int x, int y)
 			vec->plane_y *= -1;
 		}
 	}
+}
+
+void	init_vec(t_vec *vec, char c, int x, int y)
+{
+	vec->pos_x = (double)x + 0.5;
+	vec->pos_y = (double)y + 0.5;
+	vec->dir_x = 1.0;
+	vec->dir_y = 1.0;
+	vec->plane_x = 0.66;
+	vec->plane_y = 0.66;
+	vec->move_speed = 1;
+	vec->rot_speed = 1;
+	init_direction(vec, c);
 }
 
 void	init_texture(t_mlx *mlx, t_cub *cub)
@@ -92,10 +97,4 @@ void	init_screen(t_mlx *mlx)
 			error(0);
 		ft_bzero(mlx->screen[i], sizeof(int) * WIDTH);
 	}
-}
-
-void	init_mlx(t_info *info)
-{
-	init_screen(info->mlx);
-	init_texture(info->mlx, info->cub);
 }

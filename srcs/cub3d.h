@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:16:00 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 17:44:25 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/10 22:03:32 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,33 @@ typedef struct s_vec {
 	double	rot_speed;
 }	t_vec;
 
+typedef struct s_ray {
+	double	camera_x;
+	double	raydir_x;
+	double	raydir_y;
+	int		map_x;
+	int		map_y;
+	double	deltadist_x;
+	double	deltadist_y;
+	double	sidedist_x;
+	double	sidedist_y;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+}	t_ray;
+
+typedef struct s_wall {
+	double	wall_x;
+	int		step;
+	int		side;
+	int		tex_x;
+	int		line_h;
+	int		draw_start;
+	int		draw_end;
+	double	wall_dist;
+}	t_wall;
+
 typedef struct s_parse {
 	int		is_p;
 	int		is_e;
@@ -92,7 +119,8 @@ void	error(char *str);
 /*init*/
 void	init_cub(t_cub *cub);
 void	init_vec(t_vec *s_vec, char c, int x, int y);
-void	init_mlx(t_info *info);
+void	init_screen(t_mlx *mlx);
+void	init_texture(t_mlx *mlx, t_cub *cub);
 
 /*parsing*/
 void	parsing(char *file, t_info *info);
@@ -111,9 +139,14 @@ int		is_empty_line(char *line);
 void	xpm_to_img(t_mlx *m, int dir, char *wall);
 
 /*draw*/
-int	draw_screen(t_info *info);
+int		draw_screen(t_info *info);
+void	calc_wall(t_vec *v, t_ray *r, t_wall *w);
+
+/*raycasting*/
+void	dda(t_ray *r, t_cub *c);
+void	calc_ray(t_vec *v, t_ray *r, int x);
 
 /*move*/
-int	key_press(int keycode, t_info *info);
+int		key_press(int keycode, t_info *info);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:29:13 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/10 18:55:32 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/10 22:01:53 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	rotate(t_vec *vec, int dir)
 {
+	double	dir_x;
+	double	pln_x;
 	double	rot;
 
-	rot = vec->rot_speed / 10 * dir;
-	vec->dir_x = vec->dir_x * cos(rot) - vec->dir_y * sin(rot);
-	vec->dir_y = vec->dir_x * sin(rot) - vec->dir_y * cos(rot);
-	vec->plane_x = vec->plane_x * cos(rot) - vec->plane_y * sin(rot);
-	vec->plane_y = vec->plane_x * cos(rot) - vec->plane_y * sin(rot);
+	dir_x = vec->dir_x;
+	pln_x = vec->plane_x;
+	rot = (double)vec->rot_speed / 10 * dir;
+	vec->dir_x = dir_x * cos(rot) - vec->dir_y * sin(rot);
+	vec->dir_y = dir_x * sin(rot) + vec->dir_y * cos(rot);
+	vec->plane_x = pln_x * cos(rot) - vec->plane_y * sin(rot);
+	vec->plane_y = pln_x * sin(rot) + vec->plane_y * cos(rot);
 }
 
 static void	move_fb(t_vec *vec, t_cub *cub, double dir)

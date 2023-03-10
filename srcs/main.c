@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 18:57:50 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/10 22:02:23 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	start(t_info *info)
 	info->mlx->win = mlx_new_window(info->mlx->ptr, WIDTH, HEIGHT, "cub3D");
 	if (!info->mlx->win)
 		error("fail to assign mlx");
-	init_mlx(info);
+	init_screen(info->mlx);
+	init_texture(info->mlx, info->cub);
 	mlx_loop_hook(info->mlx->ptr, &draw_screen, info);
 	mlx_hook(info->mlx->win, KEY_PRESS, 0, &key_press, info);
 	// mlx_hook(info->mlx->win, DESTROY, 0, &close, info->mlx);

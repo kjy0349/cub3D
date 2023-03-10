@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+         #
+#    By: soopark <soopark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 14:58:14 by soopark           #+#    #+#              #
-#    Updated: 2023/03/10 17:44:37 by jeykim           ###   ########.fr        #
+#    Updated: 2023/03/10 21:20:24 by soopark          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= cc
 CFLAGS	= -g -Wall -Wextra -Werror -fsanitize=address
 MLXFLAG = -L./libs/mlx -lmlx -framework OpenGL -framework AppKit
-SRC		= init.c main.c parsing_map.c parsing_rgb.c parsing_texture.c parsing_utils.c parsing.c free.c draw.c draw_util.c move.c
+SRC		= init.c main.c parsing_map.c parsing_rgb.c parsing_texture.c parsing_utils.c parsing.c free.c draw.c draw_util.c move.c raycasting.c
 SRC		:= $(addprefix srcs/, $(SRC))
 OBJECT	= $(SRC:.c=.o)
 OBJECT_B = $(SRC_B:.c=.o)
