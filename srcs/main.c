@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:45:49 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 11:31:47 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	start(t_info *info)
 	if (!info->mlx->win)
 		error("fail to assign mlx");
 	init_mlx(info);
-	// mlx_loop_hook(info->mlx->ptr, &draw_screen, info);
+	mlx_loop_hook(info->mlx->ptr, &draw_screen, info);
 	// mlx_hook(info->mlx->win, KEY_PRESS, 0, &key_press, &info);
 	// mlx_hook(info->mlx->win, DESTROY, 0, &close, info->mlx);
 	mlx_loop(info->mlx->ptr);
@@ -50,6 +50,6 @@ int	main(int argc, char **argv)
 	info.mlx = &mlx;
 	info.vec = &vec;
 	parsing(argv[1], &info);
-	// start(&info);
+	start(&info);
 	return (0);
 }

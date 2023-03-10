@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:52:56 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/09 15:45:08 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 11:31:45 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	init_vec(t_vec *vec, char c, int x, int y)
 {
 	vec->pos_x = (double)x + 0.5;
 	vec->pos_y = (double)y + 0.5;
-	vec->dir_x = 1;
-	vec->dir_y = 1;
+	vec->dir_x = 1.0;
+	vec->dir_y = 1.0;
 	vec->plane_x = 0.66;
 	vec->plane_y = 0.66;
 	if (c == 'N' || c == 'S')
@@ -56,8 +56,8 @@ void	init_texture(t_mlx *mlx, t_cub *cub)
 {
 	int	i;
 
-	i = 0;
-	while (i++ < 4)
+	i = -1;
+	while (++i < 4)
 	{
 		mlx->texture[i] = malloc(sizeof(int) * PIXEL * PIXEL);
 		if (mlx->texture[i] == NULL)
@@ -77,11 +77,11 @@ void	init_screen(t_mlx *mlx)
 {
 	int	i;
 
-	i = 0;
 	mlx->screen = malloc(sizeof(int *) * HEIGHT);
 	if (mlx->screen == NULL)
 		error(0);
-	while (i++ < WIDTH)
+	i = -1;
+	while (++i < HEIGHT)
 	{
 		mlx->screen[i] = malloc(sizeof(int) * WIDTH);
 		if (mlx->screen[i] == NULL)

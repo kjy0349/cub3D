@@ -16,10 +16,11 @@
 # include "../libs/mlx/mlx.h"
 # include "../libs/Libft/libft.h"
 # include "../libs/get_next_line/get_next_line.h"
+# include <math.h>
 
 # define HEIGHT 	480
 # define WIDTH 		640
-# define PIXEL		16
+# define PIXEL		64
 
 # define KEY_PRESS	2
 # define KEY_W		13
@@ -108,5 +109,8 @@ int		is_empty_line(char *line);
 
 /*draw utils*/
 void	xpm_to_img(t_mlx *m, int dir, char *wall);
+
+/*draw */
+int	draw_screen(t_info *info);
 
 #endif

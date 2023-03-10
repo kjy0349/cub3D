@@ -11,9 +11,9 @@
 # **************************************************************************** #
 
 CC		= cc
-CFLAGS	= -g -Wall -Wextra -Werror
+CFLAGS	= -g -Wall -Wextra -Werror -fsanitize=address
 MLXFLAG = -L./libs/mlx -lmlx -framework OpenGL -framework AppKit
-SRC		= init.c main.c parsing_map.c parsing_rgb.c parsing_texture.c parsing_utils.c parsing.c free.c draw_util.c
+SRC		= init.c main.c parsing_map.c parsing_rgb.c parsing_texture.c parsing_utils.c parsing.c free.c draw.c draw_util.c
 SRC		:= $(addprefix srcs/, $(SRC))
 OBJECT	= $(SRC:.c=.o)
 OBJECT_B = $(SRC_B:.c=.o)
