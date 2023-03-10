@@ -6,7 +6,7 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 22:02:23 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 22:12:54 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ void	error(char *str)
 	exit(1);
 }
 
+int	end(t_mlx *mlx)
+{
+	mlx_clear_window(mlx->ptr, mlx->win);
+	mlx_destroy_window(mlx->ptr, mlx->win);
+	exit(0);
+}
+
 void	start(t_info *info)
 {
 	info->mlx->ptr = mlx_init();
@@ -34,7 +41,7 @@ void	start(t_info *info)
 	init_texture(info->mlx, info->cub);
 	mlx_loop_hook(info->mlx->ptr, &draw_screen, info);
 	mlx_hook(info->mlx->win, KEY_PRESS, 0, &key_press, info);
-	// mlx_hook(info->mlx->win, DESTROY, 0, &close, info->mlx);
+	mlx_hook(info->mlx->win, DESTROY, 0, &end, info->mlx);
 	mlx_loop(info->mlx->ptr);
 }
 

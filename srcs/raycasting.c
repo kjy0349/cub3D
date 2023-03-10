@@ -6,11 +6,12 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 21:17:26 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 22:02:02 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 22:13:32 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include <math.h>
 
 void	init_ray(t_vec *v, t_ray *r, int x)
 {

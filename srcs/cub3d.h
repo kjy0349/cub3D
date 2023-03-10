@@ -6,7 +6,7 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:16:00 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/10 22:03:32 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 22:13:06 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "../libs/mlx/mlx.h"
 # include "../libs/Libft/libft.h"
 # include "../libs/get_next_line/get_next_line.h"
-# include <math.h>
 
 # define HEIGHT 	480
 # define WIDTH 		640
@@ -31,7 +30,7 @@
 # define KEY_L		123
 # define KEY_ESC	53
 
-# define DISTROY	17
+# define DESTROY	17
 # define KEY_ESC	53
 
 typedef struct s_img {
@@ -115,6 +114,7 @@ typedef struct s_info {
 
 /*main*/
 void	error(char *str);
+int		end(t_mlx *mlx);
 
 /*init*/
 void	init_cub(t_cub *cub);

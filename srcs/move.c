@@ -6,11 +6,12 @@
 /*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:29:13 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/10 22:01:53 by soopark          ###   ########.fr       */
+/*   Updated: 2023/03/10 22:13:24 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include <math.h>
 
 void	rotate(t_vec *vec, int dir)
 {
@@ -67,5 +68,7 @@ int	key_press(int keycode, t_info *info)
 		rotate(info->vec, 1);
 	if (keycode == KEY_L)
 		rotate(info->vec, -1);
+	if (keycode == KEY_ESC)
+		end(info->mlx);
 	return (0);
 }
