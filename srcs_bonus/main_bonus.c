@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/13 15:20:58 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 15:32:42 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	start(t_info *info)
 	mlx_loop_hook(info->mlx->ptr, &draw_screen, info);
 	mlx_hook(info->mlx->win, KEY_PRESS, 0, &key_press, info);
 	mlx_hook(info->mlx->win, DESTROY, 0, &end, info->mlx);
+	mlx_hook(info->mlx->win, MOUSEMOVE, 0, &mouse_move, info);
 	mlx_loop(info->mlx->ptr);
 }
 

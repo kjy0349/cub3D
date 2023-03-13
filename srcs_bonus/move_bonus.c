@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:29:13 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/13 14:45:18 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 15:35:21 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,18 @@ static void	move_lr(t_vec *vec, t_cub *cub, double dir)
 		vec->pos_x = next_x;
 	if (cub->map[(int)next_y][(int)vec->pos_x] == '0')
 		vec->pos_y = next_y;
+}
+
+int	mouse_move(int x, int y, t_info *info)
+{
+	if (WIDTH / 2 < x)
+		rotate(info->vec, 1 * info->vec->rot_speed);
+	if (WIDTH / 2 > x)
+		rotate(info->vec, -1 * info->vec->rot_speed);
+	(void)y;
+	mlx_mouse_hide();
+	mlx_mouse_move(info->mlx->win, WIDTH / 2, WIDTH / 2);
+	return (0);
 }
 
 int	key_press(int keycode, t_info *info)

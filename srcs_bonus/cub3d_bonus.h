@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:16:00 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/13 15:21:26 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 15:32:11 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 
 # define DESTROY	17
 # define KEY_ESC	53
+# define MOUSEMOVE	6
 
 typedef struct s_img {
 	void	*img;
@@ -149,5 +150,6 @@ void	calc_ray(t_vec *v, t_ray *r, int x);
 
 /*move*/
 int		key_press(int keycode, t_info *info);
+int		mouse_move(int x, int y, t_info *info);
 
 #endif
