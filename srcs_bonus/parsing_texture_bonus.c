@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_texture.c                                  :+:      :+:    :+:   */
+/*   parsing_texture_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:49:48 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/11 11:51:25 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 14:45:18 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 void	put_texture(char **texture, char *value)
 {
