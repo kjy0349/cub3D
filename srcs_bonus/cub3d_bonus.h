@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:16:00 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/13 14:43:49 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 15:21:26 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ void	xpm_to_img(t_mlx *m, int dir, char *wall);
 /*draw*/
 int		draw_screen(t_info *info);
 void	calc_wall(t_vec *v, t_ray *r, t_wall *w);
+void	draw_minimap(t_info *info);
 
 /*raycasting*/
 void	dda(t_ray *r, t_cub *c);

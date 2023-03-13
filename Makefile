@@ -6,7 +6,7 @@
 #    By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 14:58:14 by soopark           #+#    #+#              #
-#    Updated: 2023/03/13 14:46:15 by jeykim           ###   ########.fr        #
+#    Updated: 2023/03/13 15:22:37 by jeykim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC		= cc
 CFLAGS	= -g -Wall -Wextra -Werror
 MLXFLAG = -L./libs/mlx -lmlx -framework OpenGL -framework AppKit
 SRC		= init.c main.c parsing_map.c parsing_rgb.c parsing_texture.c parsing_utils.c parsing.c free.c draw.c draw_util.c move.c raycasting.c
-SRC_B := $(addsuffix _bonus.c, $(addprefix srcs_bonus/, $(basename $(SRC))))
+SRC_B := $(addsuffix _bonus.c, $(addprefix srcs_bonus/, $(basename $(SRC)))) srcs_bonus/minimap_rend_bonus.c
 SRC		:= $(addprefix srcs/, $(SRC))
 OBJECT	= $(SRC:.c=.o)
 OBJECT_B = $(SRC_B:.c=.o)

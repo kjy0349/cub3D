@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:32:01 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/13 14:44:07 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 15:22:07 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	draw_screen(t_info *info)
 		calc_wall(info->vec, &r, &w);
 		draw_line(info, w, x);
 	}
+	draw_minimap(info);
 	draw(info);
 	return (0);
 }
