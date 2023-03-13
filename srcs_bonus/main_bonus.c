@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:30 by soopark           #+#    #+#             */
-/*   Updated: 2023/03/13 15:32:42 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 16:53:40 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ void	start(t_info *info)
 	mlx_loop(info->mlx->ptr);
 }
 
-void	checkd(void)
-{
-	system("leaks cub3D");
-}
-
 int	main(int argc, char **argv)
 {
 	t_info	info;
@@ -60,7 +55,6 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		error("bad arguments");
-	atexit(checkd);
 	info.cub = &cub;
 	info.mlx = &mlx;
 	info.vec = &vec;
