@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+         #
+#    By: soopark <soopark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 14:58:14 by soopark           #+#    #+#              #
-#    Updated: 2023/03/13 15:50:06 by jeykim           ###   ########.fr        #
+#    Updated: 2023/03/13 17:07:19 by soopark          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC		= cc
 CFLAGS	= -g -Wall -Wextra -Werror
 MLXFLAG = -L./libs/mlx -lmlx -framework OpenGL -framework AppKit
 SRC		= init.c main.c parsing_map.c parsing_rgb.c parsing_texture.c parsing_utils.c parsing.c free.c draw.c draw_util.c move.c raycasting.c
-SRC_B := $(addsuffix _bonus.c, $(addprefix srcs_bonus/, $(basename $(SRC)))) srcs_bonus/minimap_rend_bonus.c srcs_bonus/move_bonus.c
+SRC_B := $(addsuffix _bonus.c, $(addprefix srcs_bonus/, $(basename $(SRC)))) srcs_bonus/minimap_rend_bonus.c
 SRC		:= $(addprefix srcs/, $(SRC))
 OBJECT	= $(SRC:.c=.o)
 OBJECT_B = $(SRC_B:.c=.o)
@@ -24,6 +24,11 @@ LIBFT = ./libs/libft
 
 .c.o :
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+bonus : $(OBJECT_B)
+	make -C $(LIBFT)
+	make -C $(GNL)
+	$(CC) $(CFLAGS) $(LIBFT)/libft.a $(GNL)/gnl.a $(OBJECT_B) $(MLXFLAG) -o $(NAME)
 
 $(NAME) : $(OBJECT)
 	make -C $(LIBFT)
@@ -43,11 +48,6 @@ fclean : clean
 	make fclean -C $(LIBFT)
 	make fclean -C $(GNL)
 
-bonus : $(OBJECT_B)
-	make -C $(LIBFT)
-	make -C $(GNL)
-	$(CC) $(CFLAGS) $(LIBFT)/libft.a $(GNL)/gnl.a $(OBJECT_B) $(MLXFLAG) -o $(NAME)
-
 re : fclean all
 
-.PHONY : all clean fclean re .c.o
+.PHONY : all clean fclean re .c.o bonus

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:29:13 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/13 16:54:29 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 17:08:30 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	mouse_move(int x, int y, t_info *info)
 		rotate(info->vec, 1 * info->vec->rot_speed);
 	if (WIDTH / 2 > x)
 		rotate(info->vec, -1 * info->vec->rot_speed);
-	(void)y;
+	(void) y;
 	mlx_mouse_hide();
 	mlx_mouse_move(info->mlx->win, WIDTH / 2, WIDTH / 2);
 	return (0);

@@ -345,7 +345,7 @@ int	mipng_verif_hdr(unsigned char *hdr, png_info_t *pi)
 }
 
 
-mlx_img_list_t	*mlx_int_parse_png(ptr_t *xvar, unsigned char *fptr, int size)
+mlx_img_list_t	*mlx_int_parse_png(mlx_ptr_t *xvar, unsigned char *fptr, int size)
 {
   int		err;
   unsigned char *hdr;
@@ -387,7 +387,7 @@ mlx_img_list_t	*mlx_int_parse_png(ptr_t *xvar, unsigned char *fptr, int size)
 
 
 
-void	*mlx_png_file_to_image(ptr_t *xvar, char *file, int *width, int *height)
+void	*mlx_png_file_to_image(mlx_ptr_t *xvar, char *file, int *width, int *height)
 {
   int			fd;
   int			size;
