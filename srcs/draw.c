@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:32:01 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/13 16:22:21 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 17:18:10 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include <stdio.h>
 
 void	draw_fl_ce(t_info *info)
 {
@@ -30,7 +29,6 @@ void	draw_fl_ce(t_info *info)
 	}
 }
 
-#include <stdio.h>
 void	draw_line(t_info *info, t_wall w, int x)
 {
 	double	step;
