@@ -6,7 +6,7 @@
 #    By: soopark <soopark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 14:58:14 by soopark           #+#    #+#              #
-#    Updated: 2023/03/13 17:07:19 by soopark          ###   ########.fr        #
+#    Updated: 2023/03/13 17:13:27 by soopark          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC_B := $(addsuffix _bonus.c, $(addprefix srcs_bonus/, $(basename $(SRC)))) src
 SRC		:= $(addprefix srcs/, $(SRC))
 OBJECT	= $(SRC:.c=.o)
 OBJECT_B = $(SRC_B:.c=.o)
+MLX = ./libs/mlx
 NAME = cub3D
 GNL = ./libs/get_next_line
 LIBFT = ./libs/libft
@@ -25,15 +26,17 @@ LIBFT = ./libs/libft
 .c.o :
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-bonus : $(OBJECT_B)
-	make -C $(LIBFT)
-	make -C $(GNL)
-	$(CC) $(CFLAGS) $(LIBFT)/libft.a $(GNL)/gnl.a $(OBJECT_B) $(MLXFLAG) -o $(NAME)
-
 $(NAME) : $(OBJECT)
+	make -C $(MLX)
 	make -C $(LIBFT)
 	make -C $(GNL)
 	$(CC) $(CFLAGS) $(LIBFT)/libft.a $(GNL)/gnl.a $(OBJECT) $(MLXFLAG) -o $(NAME)
+
+bonus : $(OBJECT_B)
+	make -C $(MLX)
+	make -C $(LIBFT)
+	make -C $(GNL)
+	$(CC) $(CFLAGS) $(LIBFT)/libft.a $(GNL)/gnl.a $(OBJECT_B) $(MLXFLAG) -o $(NAME)
 
 all : $(NAME)
 
@@ -42,6 +45,7 @@ clean :
 	rm -f $(OBJECT_B)
 	make clean -C $(LIBFT)
 	make clean -C $(GNL)
+	make clean -C $(MLX)
 
 fclean : clean
 	rm -f $(NAME)
