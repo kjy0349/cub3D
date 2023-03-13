@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_rend_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@stduent.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: soopark <soopark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 15:14:56 by jeykim            #+#    #+#             */
-/*   Updated: 2023/03/13 15:25:40 by jeykim           ###   ########.fr       */
+/*   Updated: 2023/03/13 17:17:03 by soopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	make_minimap(t_mlx *m, int y, int x, char elem)
 	{
 		j = -1;
 		while (++j < 5)
-			m->screen[(y *  5) + i][(x * 5) + j] = color;
+			m->screen[(y * 5) + i][(x * 5) + j] = color;
 	}
 }
 
